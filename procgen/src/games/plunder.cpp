@@ -113,8 +113,8 @@ class PlunderGame : public BasicAbstractGame {
         action_vrot = 0;
     }
 
-    void game_reset() override {
-        BasicAbstractGame::game_reset();
+    void game_reset(int custom_background=-1) override {
+        BasicAbstractGame::game_reset(options.custom_background);
 
         agent->image_type = SHIP;
 

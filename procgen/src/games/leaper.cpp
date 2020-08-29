@@ -119,8 +119,8 @@ class LeaperGame : public BasicAbstractGame {
         return options.distribution_mode == EasyMode ? 0 : rand_gen.randn(2);
     }
 
-    void game_reset() override {
-        BasicAbstractGame::game_reset();
+    void game_reset(int custom_background=-1) override {
+        BasicAbstractGame::game_reset(options.custom_background);
 
         options.center_agent = false;
 

@@ -82,6 +82,7 @@ class BaseProcgenEnv(CEnv):
         resource_root=None,
         num_threads=4,
         render_mode=None,
+        custom_background=-1
     ):
         if resource_root is None:
             resource_root = os.path.join(SCRIPT_DIR, "data", "assets") + os.sep
@@ -120,6 +121,7 @@ class BaseProcgenEnv(CEnv):
                 "render_human": render_human,
                 # these will only be used the first time an environment is created in a process
                 "resource_root": resource_root,
+                "custom_background":custom_background
             }
         )
 

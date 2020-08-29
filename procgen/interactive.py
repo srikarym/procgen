@@ -64,9 +64,11 @@ def main():
     parser.add_argument(
         "--level-seed", type=int, help="select an individual level to use"
     )
+    parser.add_argument("--custom-background", type=int, help="select an individual background", default = -1)
+
     args = parser.parse_args()
 
-    kwargs = {}
+    kwargs = {"custom_background":args.custom_background}
     if args.env_name != "coinrun_old":
         kwargs["distribution_mode"] = args.distribution_mode
     if args.level_seed is not None:

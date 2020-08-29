@@ -105,3 +105,6 @@ venv.bak/
 
 .envrc
 .build/
+
+find_bgnd.ipynb
+mystuff/

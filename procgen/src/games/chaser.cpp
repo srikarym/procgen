@@ -137,7 +137,7 @@ class ChaserGame : public BasicAbstractGame {
         main_height = maze_dim;
     }
 
-    void game_reset() override {
+    void game_reset(int custom_background=-1) override {
         int extra_orb_sign = 1;
 
         if (options.distribution_mode == EasyMode) {
@@ -161,7 +161,7 @@ class ChaserGame : public BasicAbstractGame {
             maze_gen = _maze_gen;
         }
 
-        BasicAbstractGame::game_reset();
+        BasicAbstractGame::game_reset(options.custom_background);
 
         options.center_agent = false;
 

@@ -112,8 +112,8 @@ class HeistGame : public BasicAbstractGame {
         main_height = world_dim;
     }
 
-    void game_reset() override {
-        BasicAbstractGame::game_reset();
+    void game_reset(int custom_background=-1) override {
+        BasicAbstractGame::game_reset(options.custom_background);
 
         int min_maze_dim = 5;
         int max_diff = (world_dim - min_maze_dim) / 2;

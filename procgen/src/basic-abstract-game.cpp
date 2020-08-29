@@ -2,6 +2,8 @@
 #include "resources.h"
 #include "assetgen.h"
 #include "qt-utils.h"
+#include <iostream>
+using namespace std;
 
 const float MAXVTHETA = 15 * PI / 180;
 const float MIXRATEROT = 0.5f;
@@ -755,7 +757,7 @@ void BasicAbstractGame::erase_if_needed() {
     }
 }
 
-void BasicAbstractGame::game_reset() {
+void BasicAbstractGame::game_reset(int custom_background) {
     choose_world_dim();
     fassert(main_width > 0 && main_height > 0);
 
@@ -764,7 +766,13 @@ void BasicAbstractGame::game_reset() {
     grid_size = main_width * main_height;
     grid.resize(main_width, main_height);
 
-    background_index = rand_gen.randn((int)(main_bg_images_ptr->size()));
+
+    if (custom_background != -1 and custom_background < (int)(main_bg_images_ptr->size())) {
+        background_index = custom_background;
+    }
+    else {
+        background_index = rand_gen.randn((int)(main_bg_images_ptr->size()));
+    }
 
     AssetGen bggen(&rand_gen);
 

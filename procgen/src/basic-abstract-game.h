@@ -22,7 +22,7 @@ class BasicAbstractGame : public Game {
 
     // Game methods
     void game_step() override;
-    void game_reset() override;
+    void game_reset(int custom_background=-1) override;
     void game_draw(QPainter &p, const QRect &rect) override;
     void game_init() override;
     void serialize(WriteBuffer *b) override;

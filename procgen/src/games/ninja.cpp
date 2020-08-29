@@ -304,8 +304,8 @@ class Ninja : public BasicAbstractGame {
         fill_elem(curr_x + 1, 0, main_width - curr_x - 1, main_height, WALL_MID);
     }
 
-    void game_reset() override {
-        BasicAbstractGame::game_reset();
+    void game_reset(int custom_background=-1) override {
+        BasicAbstractGame::game_reset(options.custom_background);
 
         gravity = 0.2f;
         max_jump = 1.5;

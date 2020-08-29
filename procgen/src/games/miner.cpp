@@ -129,8 +129,8 @@ class MinerGame : public BasicAbstractGame {
         }
     }
 
-    void game_reset() override {
-        BasicAbstractGame::game_reset();
+    void game_reset(int custom_background=-1) override {
+        BasicAbstractGame::game_reset(options.custom_background);
 
         agent->rx = .5;
         agent->ry = .5;

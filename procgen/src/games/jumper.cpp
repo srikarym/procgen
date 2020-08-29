@@ -218,7 +218,7 @@ class Jumper : public BasicAbstractGame {
         main_height = world_dim;
     }
 
-    void game_reset() override {
+    void game_reset(int custom_background=-1) override {
         if (options.distribution_mode == EasyMode) {
             visibility = 12;
             compass_dim = 3;
@@ -231,7 +231,7 @@ class Jumper : public BasicAbstractGame {
             timeout = 2000;
         }
 
-        BasicAbstractGame::game_reset();
+        BasicAbstractGame::game_reset(options.custom_background);
 
         out_of_bounds_object = WALL_OBJ;
 

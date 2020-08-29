@@ -199,8 +199,8 @@ class BossfightGame : public BasicAbstractGame {
         boss->vy = 0;
     }
 
-    void game_reset() override {
-        BasicAbstractGame::game_reset();
+    void game_reset(int custom_background=-1) override {
+        BasicAbstractGame::game_reset(options.custom_background);
 
         damaged_until_time = 0;
         last_fire_time = 0;

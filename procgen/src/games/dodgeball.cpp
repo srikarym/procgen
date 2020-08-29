@@ -256,8 +256,8 @@ class DodgeballGame : public BasicAbstractGame {
         main_height = world_dim;
     }
 
-    void game_reset() override {
-        BasicAbstractGame::game_reset();
+    void game_reset(int custom_background=-1) override {
+        BasicAbstractGame::game_reset(options.custom_background);
 
         options.center_agent = options.distribution_mode == MemoryMode;
 

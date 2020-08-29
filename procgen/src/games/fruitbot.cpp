@@ -194,8 +194,8 @@ class FruitBotGame : public BasicAbstractGame {
         }
     }
 
-    void game_reset() override {
-        BasicAbstractGame::game_reset();
+    void game_reset(int custom_background=-1) override {
+        BasicAbstractGame::game_reset(options.custom_background);
 
         last_fire_time = 0;
 

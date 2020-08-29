@@ -57,6 +57,7 @@ struct GameOptions {
     bool use_easy_jump = false;
     int plain_assets = 0;
     int physics_mode = 0;
+    int custom_background = -1;
 };
 
 class Game {
@@ -114,7 +115,7 @@ class Game {
     virtual ~Game() = 0;
     virtual void observe();
     virtual void game_init() = 0;
-    virtual void game_reset() = 0;
+    virtual void game_reset(int custom_background=-1) = 0;
     virtual void game_step() = 0;
     virtual void game_draw(QPainter &p, const QRect &rect) = 0;
     virtual void serialize(WriteBuffer *b);

@@ -232,8 +232,8 @@ class Climber : public BasicAbstractGame {
         main_height = 64;
     }
 
-    void game_reset() override {
-        BasicAbstractGame::game_reset();
+    void game_reset(int custom_background=-1) override {
+        BasicAbstractGame::game_reset(options.custom_background);
 
         gravity = 0.2f;
         max_jump = 1.5;
