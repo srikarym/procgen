@@ -765,14 +765,18 @@ void BasicAbstractGame::game_reset(int custom_background) {
 
     grid_size = main_width * main_height;
     grid.resize(main_width, main_height);
+    int r = 0;
 
-
+    // background_index = 1
     if (custom_background != -1 and custom_background < (int)(main_bg_images_ptr->size())) {
-        background_index = custom_background;
+        r = rand_gen.randn((int)(main_bg_images_ptr->size()));
+        background_index =  custom_background;
+
     }
     else {
         background_index = rand_gen.randn((int)(main_bg_images_ptr->size()));
     }
+
 
     AssetGen bggen(&rand_gen);
 
